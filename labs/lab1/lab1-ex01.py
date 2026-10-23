@@ -47,7 +47,21 @@ class DeviceManager:
             print("No Devices found with that name")
 
     def searchById(self):
-        # code
+        user_input_id = input("Enter the desired Device ID: ")
+        devices_list = self.catalog["devicesList"]
+        
+        devices_found = []
+        found = False
+        
+        for device in devices_list:
+            if device["deviceID"] == user_input_id:
+                devices_found.append(device)
+                found = True
+        
+        if found:
+            print(devices_found)
+        else:
+            print("No Devices found with that ID")
         return
 
     def printAll(self):
